@@ -18,7 +18,7 @@ const App = () =>{
         <BrowserRouter>
             <Navbar fetch_cart={fetch_cart} cartlength={cartlength} ArrangeCategory={ArrangeCategory}/>
         <Switch>
-            <Route exact path="/">
+            <Route exact path="groceryandcakes.netlify.app">
             {ispending && <div className="loading_div">Loading.....</div>}
          {categoryWise && <div> { <Homescreen  products={products.filter(p=>p.category == "tasty snacks")} dlt={handledelete} title={"Tasty Snacks"} Addtocart={addtocart} fetch_cart={fetch_cart}/>}
            { <Homescreen  products={products.filter(p=>p.category == "pastaries")} dlt={handledelete} title={"Pastaries"} Addtocart={addtocart} fetch_cart={fetch_cart}/>}

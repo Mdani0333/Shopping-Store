@@ -159,7 +159,7 @@ const useFetch = () =>{
         );
     }
 
-    ///////////////////////////////////////////
+    //////////////////Arranging by category wise/////////////////////////
 
     const ArrangeCategory = () =>{
         if(categoryWise != false){
