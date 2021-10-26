@@ -10,6 +10,30 @@ const Productscreen = ({products, Addtocart, fetch_cart, SubmitReview}) =>{
     const [rating, setRating] = useState(null);
     const [hover, setHover] = useState(null);
     const {id} = useParams();
+    let today = new Date();
+    var weekday = "";
+    if(today.getDay() == 1){
+        weekday = "Sun";
+    }
+    else if(today.getDay() == 2){
+        weekday = "Mon";
+    }
+    else if(today.getDay() == 3){
+        weekday = "Tue";
+    }
+    else if(today.getDay() == 4){
+        weekday = "Wed";
+    }
+    else if(today.getDay() == 5){
+        weekday = "Thu";
+    }
+    else if(today.getDay() == 6){
+        weekday = "Fri";
+    }
+    else if(today.getDay() == 7){
+        weekday = "Sat";
+    }
+    var currentDate = weekday + " " + today.getDate() + "-" + today.getMonth() + "-" + today.getFullYear() + " " + today.getHours() + ":" + today.getMinutes();
 ///////////////nullifying Review Form
     const NullifyReviewForm = () =>{
         setName(""); 
@@ -64,6 +88,7 @@ const Productscreen = ({products, Addtocart, fetch_cart, SubmitReview}) =>{
             <div className="com_div">
                 <p>{r.name}</p>
                 <p>"{r.comment}"</p>
+                <a className="Date">{r.currentDate}</a>
             </div>
             </div>
             )}
@@ -104,7 +129,7 @@ const Productscreen = ({products, Addtocart, fetch_cart, SubmitReview}) =>{
             <textarea value={comment} onChange={e => setComment(e.target.value)}/>
         </div>
                 <button className="submit_btn" 
-                onClick={() => {SubmitReview(name, rating, comment, id) ; NullifyReviewForm()}}>Submit</button>
+                onClick={() => {SubmitReview(name, rating, comment,currentDate, id) ; NullifyReviewForm()}}>Submit</button>
             </div>
 
         </div>

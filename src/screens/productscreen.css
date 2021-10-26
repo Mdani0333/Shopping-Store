@@ -171,12 +171,18 @@ h2{
     padding: 25px;
     border-radius: 0px 0px 7px 7px;
     border: 2px solid #ebebeb;
+    position: relative;
 }
 .com_div > p{
     font-size: 1.2rem;
     font-weight: 500;
     color: #999ca5;
     margin-bottom: 15px;
+}
+.Date{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
 }
 
 

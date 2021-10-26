@@ -5,13 +5,14 @@ import {GrCart} from 'react-icons/gr';
 import {useState} from 'react';
 
 
-const Navbar = ({fetch_cart, cartlength, ArrangeCategory}) =>{
+const Navbar = ({fetch_cart, cartlength, ArrangeCategory, apicheck}) =>{
    
     return(
         <div className="navbar">
             <Link to="/">
                 <a>Store</a>
             </Link>
+            <button onClick={()=>apicheck()}>Show API</button>
             <div className="Category_Cart_div">
                 <p>Arrange By Category</p>
             <label class="switch">

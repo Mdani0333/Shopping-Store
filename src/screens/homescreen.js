@@ -1,7 +1,7 @@
 import './homescreen.css';
 import { Link } from 'react-router-dom';
 
-const Homescreen = ({Addtocart,products, dlt, title}) =>{
+const Homescreen = ({Addtocart, products, dlt, title}) =>{
     return(
         <div className="homescreen__maindiv">
             <h2>{title}</h2>

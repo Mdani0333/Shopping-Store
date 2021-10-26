@@ -11,8 +11,9 @@ const useFetch = () =>{
     const [categoryWise, setCategoryWise] = useState(false);
     const [withoutCategory, setWithoutCategory] = useState(true);
 
-    const CART_URL = 'https://my-json-server.typicode.com/Mdani0333/FakeReatAPI/cart';
-    const PRODUCTS_URL = 'https://my-json-server.typicode.com/Mdani0333/FakeReatAPI/products';
+    const [apiTest, setApiTest] = useState([]);
+    const CART_URL = 'https://my-json-server.typicode.com/Mdani0333/Fake-Rest-API/cart';
+    const PRODUCTS_URL = 'https://my-json-server.typicode.com/Mdani0333/Fake-Rest-API/products';
 
 
     useEffect(() => {
@@ -142,8 +143,8 @@ const useFetch = () =>{
     }
 
     /////////////////// Products Review
-    const SubmitReview = (name, rating, comment, id, Review) =>{
-        var review_object = {name, rating, comment};
+    const SubmitReview = (name, rating, comment, currentDate, id, Review) =>{
+        var review_object = {name, rating, comment, currentDate};
         var index = products.findIndex(f => f.id == id);
         const ReviewArray = products[index].review;
         
@@ -171,7 +172,24 @@ const useFetch = () =>{
             setWithoutCategory(false);
         }
     }
-    console.log(categoryWise);
+    
+    //////////////////API Check
+    const apicheck = () =>{
+        fetch("https://iterar-mapi-us.p.rapidapi.com/api/reserpine/substances.json", {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "iterar-mapi-us.p.rapidapi.com",
+                "x-rapidapi-key": "a1d1237975msh624576b4f4886c9p18920djsna65fc907d1c8"
+            }
+        })
+        .then(res => {
+            return res.json();
+        })
+        .then(data =>{
+            setApiTest(data);
+            console.log(apiTest);
+        });
+    }
 
 
     return {
@@ -189,7 +207,8 @@ const useFetch = () =>{
         cartTotal,
         cartlength,
         categoryWise, 
-        withoutCategory
+        withoutCategory, 
+        apicheck
     }
 }
 export default useFetch;

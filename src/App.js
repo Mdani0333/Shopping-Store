@@ -5,18 +5,17 @@ import Productscreen from "./screens/productscreen.js";
 import Cartscreen from "./screens/cartscreen.js";
 import useFetch from "./usefetch.js";
 import NotFound from "./screens/NotFound.js";
-// import {categoryWise} from "./components/Navbar";
 
 
 
 
 const App = () =>{
     const {products, cartarr, ispending, cartTotal, cartlength, categoryWise, withoutCategory,
-         handledelete, addtocart, deletecart, fetch_cart, SubmitReview, CartInc, CartDec, ArrangeCategory} = useFetch();
+         handledelete, addtocart, deletecart, fetch_cart, SubmitReview, CartInc, CartDec, ArrangeCategory, apicheck} = useFetch();
 
     return(
         <BrowserRouter>
-            <Navbar fetch_cart={fetch_cart} cartlength={cartlength} ArrangeCategory={ArrangeCategory}/>
+            <Navbar fetch_cart={fetch_cart} cartlength={cartlength} ArrangeCategory={ArrangeCategory} apicheck={apicheck}/>
         <Switch>
             <Route exact path="/">
             {ispending && <div className="loading_div">Loading.....</div>}
