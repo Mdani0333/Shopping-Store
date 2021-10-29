@@ -172,25 +172,6 @@ const useFetch = () =>{
             setWithoutCategory(false);
         }
     }
-    
-    //////////////////API Check
-    const apicheck = () =>{
-        fetch("https://iterar-mapi-us.p.rapidapi.com/api/reserpine/substances.json", {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "iterar-mapi-us.p.rapidapi.com",
-                "x-rapidapi-key": "a1d1237975msh624576b4f4886c9p18920djsna65fc907d1c8"
-            }
-        })
-        .then(res => {
-            return res.json();
-        })
-        .then(data =>{
-            setApiTest(data);
-            console.log(apiTest);
-        });
-    }
-
 
     return {
         products,
@@ -207,8 +188,7 @@ const useFetch = () =>{
         cartTotal,
         cartlength,
         categoryWise, 
-        withoutCategory, 
-        apicheck
+        withoutCategory
     }
 }
 export default useFetch;

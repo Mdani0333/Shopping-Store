@@ -12,7 +12,6 @@ const Navbar = ({fetch_cart, cartlength, ArrangeCategory, apicheck}) =>{
             <Link to="/">
                 <a>Store</a>
             </Link>
-            <button onClick={()=>apicheck()}>Show API</button>
             <div className="Category_Cart_div">
                 <p>Arrange By Category</p>
             <label class="switch">
